@@ -59,5 +59,5 @@ def hostDone(request):
 
 def register(request, id):
     if request.method == "GET":
-        query = query_by_id(id)
-    return render(request, 'register.html', {'query': query})
+        query, id = query_by_id(id)
+    return render(request, 'register.html', {'query': query, 'id':id})

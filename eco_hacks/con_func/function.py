@@ -48,5 +48,4 @@ def get_db_browse(request):
 def query_by_id(id):
     collection = mongoConnection_collection()
     query = collection.find_one({"_id": ObjectId(id)})
-    print(query)
-    return (query)
+    return (query, id)
