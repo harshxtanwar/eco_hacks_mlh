@@ -50,7 +50,15 @@ def regDone(request, id):
     if request.method == "POST":
         name = request.POST.get('your_name')
         email = request.POST.get('email')
-        email_send(name, email)
+        query = query_by_id(id)
+        event_name = query[0].get('event_name')
+        event_date = query[0].get('event_date')
+        event_time = query[0].get('event_time')
+        event_location = query[0].get('event_location')
+        event_detail = query[0].get('event_detail')
+        organiser_contact = query[0].get('email')
+
+        email_send(name, email, event_name, event_date, event_time, event_location, event_detail, organiser_contact)
         print(id)
     # No Backend Code Needed
     # Button to redirect to the homepage

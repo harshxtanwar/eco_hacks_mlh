@@ -4,7 +4,7 @@ import smtplib
 
 
 
-def email_send(name, email):
+def email_send(name, email, event_name, event_date, event_time, event_location, event_detail, organiser_contact):
     email_sender = 'greenvalley.events.2022@gmail.com'
     email_password = 'hgxdujejmlxpdpwf'
     email_reciever = email
@@ -15,7 +15,7 @@ def email_send(name, email):
 
     Hello {},
 
-    Thankyou for registering for the event. We at GreenValley are focused on working on 
+    Thankyou for registering for the event {}. We at GreenValley are focused on working on 
     solving major environment related issues by hosting events and meetups to spread more 
     awareness and to perform tasks to keep our environment clean and green.
 
@@ -24,15 +24,19 @@ def email_send(name, email):
 
     Below are the details of the event you have registered for:
     
-    1. name
-    2. locatiom
+    1. Name                 : {}
+    2. Location             : {}
+    3. Date                 : {}
+    4. Time                 : {}
+    5. Details              : {}
+    6. Organiser Contact    : {}
     
 
     See ya soon on blah blah date.
     
     Regards 
     GreenValley
-    """.format(name)
+    """.format(name, event_name, event_name, event_location, event_date, event_time, event_detail, organiser_contact)
     
     em = EmailMessage()
     em['From'] = email_sender
