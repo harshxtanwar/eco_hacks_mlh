@@ -2,13 +2,52 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>registering / email input</h1>
-</body>
+  </head>
+  <body>
+    <div>
+      <div class="card-body">
+        <h4>Event Name:{{query.event_name}}</h4>
+        <span class="tag tag-teal">date:{{query.event_date}} </span>
+        <span class="tag tag-teal"> time:{{query.event_time}}</span>
+        <p>Location:{{query.event_location}} {{query.id}}</p>
+        <p>discription: {{query.event_detail}}</p>
+      </div>
+      <div>
+        <form action="." method="post">
+          {% csrf_token%}
+          <div class="form-item">
+            <label for="your_name">Your name: </label>
+            <input
+              class="input"
+              id="your_name"
+              type="text"
+              name="your_name"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="email">Email address: </label>
+            <input
+              class="input"
+              id="email"
+              type="email"
+              name="email"
+              required
+            />
+          </div>
+          <input
+            type="submit"
+            data-wait="Please wait..."
+            value="Submit"
+            class="button w-button"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
