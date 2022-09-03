@@ -42,6 +42,12 @@ def browseEvents(request):
 
 
 def regDone(request):
+
+    if request.method == "POST":
+        name = request.POST.get('your_name')
+        email = request.POST.get('email')
+        
+
     ## No Backend Code Needed 
     ## Button to redirect to the homepage
     ## get data to register for the event
