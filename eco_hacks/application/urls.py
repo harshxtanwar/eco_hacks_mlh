@@ -7,7 +7,7 @@ urlpatterns = [
     path('home/post_event/', views.postEvent),
     path('home/browse_event/', views.browseEvents),
     path('home/browse_event/<id>', views.register),
-    path('registration_done/', views.regDone),
+    path('home/browse_event/registration_done/', views.regDone),
     path('hosting_done/', views.hostDone)
     
 ]
