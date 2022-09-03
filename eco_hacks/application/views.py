@@ -5,6 +5,7 @@ from django.http import HttpResponse
 # from database.database import post_db
 # Create your views here.
 from con_func.function import query_by_id, post_db, get_db_browse
+from con_func.emails import email_send
 
 
 
@@ -46,7 +47,7 @@ def regDone(request):
     if request.method == "POST":
         name = request.POST.get('your_name')
         email = request.POST.get('email')
-        
+        email_send(name, email)
 
     ## No Backend Code Needed 
     ## Button to redirect to the homepage
