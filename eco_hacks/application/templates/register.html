@@ -14,11 +14,11 @@
         <h4>Event Name:{{query.event_name}}</h4>
         <span class="tag tag-teal">date:{{query.event_date}} </span>
         <span class="tag tag-teal"> time:{{query.event_time}}</span>
-        <p>Location:{{query.event_location}} {{query.id}}</p>
+        <p>Location:{{query.event_location}} {{id}}</p>
         <p>discription: {{query.event_detail}}</p>
       </div>
       <div>
-        <form action="registration_done/" method="post">
+        <form action="registration_done/{{id}}" method="post">
           {% csrf_token%}
           <div class="form-item">
             <label for="your_name">Your name: </label>
