@@ -31,7 +31,7 @@ def get_db_browse(request):
         listt = []
         for i in query:
             dic = {
-                '_id' : i.get('_id'),
+                'id' : i.get('_id'),
                 'event_name' : i.get('event_name'),
                 'event_date' : i.get('event_date'),
                 'event_time' : i.get('event_time'),
@@ -102,3 +102,6 @@ def regDone(request):
 
 def hostDone(request):
     return render(request, 'host_done.html') 
+
+def register(request, id):
+    return HttpResponse(id)
