@@ -2,6 +2,7 @@ from typing import Collection
 from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse
+from bson.objectid import ObjectId
 
 
 import pymongo 
@@ -44,4 +45,8 @@ def get_db_browse(request):
         print ((listt))
     return listt
 
-
+def query_by_id(id):
+    collection = mongoConnection_collection()
+    query = collection.find_one({"_id": ObjectId(id)})
+    print(query)
+    return (query)
