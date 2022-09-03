@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'browsing.css'%}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <div class="card">
+          <div class="card-header">
+            <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
+          </div>
+          <div class="card-body">
+            <span class="tag tag-teal">date:  time:</span>
+            <h4>
+              Event Name:
+              {{query.your_name}}
+            </h4>
+            <p>
+              Location:
+            </p>
+            <div>
+              <button>Register for More details</button>
+            </div>
+          </div>
+          
+        </div>
+    </div>
+  </body>
+</html>

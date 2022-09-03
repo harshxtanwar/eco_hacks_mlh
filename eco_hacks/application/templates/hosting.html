@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'hosting.css'%}" />
+  </head>
+  <body>
+    <div class="header wf-section">
+      <div class="form-block w-form">
+        <h1 class="main-heading">
+          create a Event <br />for making the world better
+        </h1>
+        <div class="divider"></div>
+        <form action="." method="post">
+          {% csrf_token%}
+          <div class="form-item">
+            <label for="your_name">Your name: </label>
+            <input
+              class="input"
+              id="your_name"
+              type="text"
+              name="your_name"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="email">Email address: </label>
+            <input
+              class="input"
+              id="email"
+              type="email"
+              name="email"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="mobile_no">Mobile Number: </label>
+            <input
+              class="input"
+              id="mobile_no"
+              type="tel"
+              name="mobile_no"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="event_name">Event name: </label>
+            <input
+              class="input"
+              id="event_name"
+              type="text"
+              name="event_name"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <label for="event_location">Event Location: </label>
+            <input
+              class="input"
+              id="event_location"
+              type="text"
+              name="event_location"
+              required
+            />
+          </div>
+          <div class="form-item">
+            <div class="date-time">
+              <div class="date">
+                <label for="event_date">Event Date: </label>
+                <input
+                  class="input_date"
+                  id="event_date"
+                  type="date"
+                  name="event_date"
+                  required
+                />
+              </div>
+              <div class="time">
+                <label for="event_time">Event time: </label>
+                <input
+                  class="input_time"
+                  id="event_time"
+                  type="time"
+                  name="event_time"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-item">
+            <label for="event_detail">Event details:</label>
+            <textarea
+              id="event_detail"
+              name="event_detail"
+              rows="4"
+              cols="50"
+              required
+            ></textarea>
+          </div>
+          <input
+            type="submit"
+            data-wait="Please wait..."
+            value="Submit"
+            class="button w-button"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
