@@ -7,9 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'browsing.css'%}" />
-    <title>Document</title>
+    <title>Browse Event</title>
   </head>
   <body>
+    <div class="nev-bar">
+      <div class="nev-bar-mid">
+        <a href="../"
+          ><img src="{% static 'Group 1.png'%}" height="100px"
+        /></a>
+      </div>
+    </div>
     <div>
       <div class="container">
         {% for i in query %}
@@ -18,21 +25,21 @@
               <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" />
             </div>
             <div class="card-body">
-              <span class="tag tag-teal">date:{{i.event_date}} </span>
-              <span class="tag tag-teal"> time:{{i.event_time}}</span>
+              <div class="date-time">
+                <span class="tag tag-teal">Date : {{i.event_date}} </span>
+                <span class="tag tag-pink">Time : {{i.event_time}}</span>
+              </div>
               <h4>
-                Event Name:{{i.event_name}}
+                Event Name : {{i.event_name}}
               </h4>
               <p>
-                Location:{{i.event_location}}
-                {{i.id}}
+                Location : {{i.event_location}}
               </p>
-              <div>
-                <a href="{{i.id}}">button</a>
-              </div>
+                <a class="button-37" href="{{i.id}}">Explore Event</a>
             </div>
           </div>
         {% endfor %}
     </div>
   </body>
 </html>
+<!-- HTML !-->
