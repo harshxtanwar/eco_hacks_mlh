@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # from database.database import post_db
 # Create your views here.
-from con_func.function import query_by_id, post_db, get_db_browse
+from con_func.function import query_by_id, post_db, get_db_browse, post_mongodb_registered
 from con_func.emails import email_send
 
 
@@ -50,7 +50,17 @@ def regDone(request, id):
     if request.method == "POST":
         name = request.POST.get('your_name')
         email = request.POST.get('email')
-        email_send(name, email)
+        query = query_by_id(id)
+        event_name = query[0].get('event_name')
+        event_date = query[0].get('event_date')
+        event_time = query[0].get('event_time')
+        event_location = query[0].get('event_location')
+        event_detail = query[0].get('event_detail')
+        organiser_contact = query[0].get('email')
+
+        email_send(name, email, event_name, event_date, event_time, event_location, event_detail, organiser_contact)
+        post_mongodb_registered(name, email, event_name)
+
         print(id)
     # No Backend Code Needed
     # Button to redirect to the homepage
