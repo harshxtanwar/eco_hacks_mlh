@@ -13,30 +13,28 @@ def email_send(name, email, event_name, event_date, event_time, event_location, 
     subject = 'Registration succesfull'
     body = """
 
-    Hello {},
+Hello {},
 
-    Thankyou for registering for the event {}. We at GreenValley are focused on working on 
-    solving major environment related issues by hosting events and meetups to spread more 
-    awareness and to perform tasks to keep our environment clean and green.
+Thankyou for registering for the event {}. We at GreenValley are focused on working on 
+solving major environment related issues by hosting events and meetups to spread more 
+awareness and to perform tasks to keep our environment clean and green.
 
-    We really appreciate your time and efforts to help us contribute and achieve our 
-    objective to save our environment.
+We really appreciate your time and efforts to help us contribute and achieve our 
+objective to save our environment.
+Below are the details of the event you have registered for:
 
-    Below are the details of the event you have registered for:
-    
-    1. Name                 : {}
-    2. Location             : {}
-    3. Date                 : {}
-    4. Time                 : {}
-    5. Details              : {}
-    6. Organiser Contact    : {}
-    
+1. Name                 : {}
+2. Location             : {}
+3. Date                 : {}
+4. Time                 : {}
+5. Details              : {}
+6. Organiser Contact    : {}
 
-    See ya soon on blah blah date.
-    
-    Regards 
-    GreenValley
-    """.format(name, event_name, event_name, event_location, event_date, event_time, event_detail, organiser_contact)
+See ya soon on {} date.
+
+Regards 
+GreenValley
+""".format(name, event_name, event_name, event_location, event_date, event_time, event_detail, organiser_contact, event_date)
     
     em = EmailMessage()
     em['From'] = email_sender
